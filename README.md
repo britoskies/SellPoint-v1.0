@@ -23,10 +23,16 @@ admin
 ### Overview
 
 Este paquete incluye los siguientes módulos:
-- En proceso...
+- 3 Capas (Presentación, Negocios y Datos)
+- 7 Forms (Login, Registros, Dashboard, etc...)
+- Modelos auto-generados por EntityFramework
 
 ### Features
-- En processo...
+- Splash Screen
+- Login Form
+- Menu Principal (con datos generados del usuario logueado)
+- Manejo de entidades (3 forms con funcionalidades CRUD)
+- Acerca de form
 
 ### Development
 
