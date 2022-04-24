@@ -33,6 +33,7 @@ Este paquete incluye los siguientes módulos:
 - Menu Principal (con datos generados del usuario logueado)
 - Manejo de entidades (3 forms con funcionalidades CRUD)
 - Acerca de form
+- Base de Datos Remota, con SQL Server (5+ procedures, 5+ tablas)
 
 ### Development
 
