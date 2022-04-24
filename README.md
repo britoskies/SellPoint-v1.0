@@ -47,7 +47,7 @@ Este paquete incluye los siguientes módulos:
 ![GrupoEntidades](/Presentation/Assets/grupoentidades.jpeg)
 
 ## Tipo Entidades Form
-![TipoEntidades](/Presentation/Assets/tipoentidades.jpeg)
+![TipoEntidades](/Presentation/Assets/tiposentidades.jpeg)
 
 ## "Acerca de" Form
 ![About](/Presentation/Assets/about.jpeg)
