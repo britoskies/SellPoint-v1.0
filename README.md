@@ -27,6 +27,32 @@ Este paquete incluye los siguientes módulos:
 - 7 Forms (Login, Registros, Dashboard, etc...)
 - Modelos auto-generados por EntityFramework
 
+
+## Splash Screen Form
+
+![Splash](/Presentation/Assets/splash.jpeg)
+
+## Login Form
+
+![Login](/Presentation/Assets/login.jpeg)
+
+## Menú Principal
+
+![Menu](/Presentation/Assets/menu.jpeg)
+
+## Entidades Form
+![Entidades](/Presentation/Assets/entidades.jpeg)
+
+## Grupo Entidades Form
+![GrupoEntidades](/Presentation/Assets/grupoentidades.jpeg)
+
+## Tipo Entidades Form
+![TipoEntidades](/Presentation/Assets/tipoentidades.jpeg)
+
+## "Acerca de" Form
+![About](/Presentation/Assets/about.jpeg)
+
+
 ### Features
 - Splash Screen
 - Login Form
