@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SellPointModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Entidade">
+    <Key>
+      <PropertyRef Name="IdEntidad" />
+    </Key>
+    <Property Name="IdEntidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Direccion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Localidad" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TipoEntidad" Type="Int32" Nullable="false" />
+    <Property Name="TipoDocumento" Type="Int32" Nullable="false" />
+    <Property Name="NumeroDocumento" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="Telefonos" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="URLPaginaWeb" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="URLFacebook" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="URLInstagram" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="URLTwitter" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="URLTikTok" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="IdGrupoEntidad" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="IdTipoEntidad" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="LimiteCredito" Type="Decimal" Precision="15" Scale="2" />
+    <Property Name="UserNameEntidad" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PasswordEntidad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RolUserEntidad" Type="Int32" />
+    <Property Name="Comentario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="NoEliminable" Type="Boolean" />
+    <Property Name="FechaRegistro" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="GruposEntidade" Relationship="Self.FK__Entidades__IdGru__628FA481" FromRole="Entidades" ToRole="GruposEntidades" />
+    <NavigationProperty Name="TiposEntidade" Relationship="Self.FK__Entidades__IdTip__6383C8BA" FromRole="Entidades" ToRole="TiposEntidades" />
+    <NavigationProperty Name="tblRolUserEntidad" Relationship="Self.FK__Entidades__RolUs__66603565" FromRole="Entidades" ToRole="tblRolUserEntidad" />
+    <NavigationProperty Name="tblStatu" Relationship="Self.FK__Entidades__Statu__68487DD7" FromRole="Entidades" ToRole="tblStatus" />
+    <NavigationProperty Name="tblTipoDocumento" Relationship="Self.FK__Entidades__TipoD__619B8048" FromRole="Entidades" ToRole="tblTipoDocumento" />
+    <NavigationProperty Name="tblTipoEntidad" Relationship="Self.FK__Entidades__TipoE__5FB337D6" FromRole="Entidades" ToRole="tblTipoEntidad" />
+  </EntityType>
+  <EntityType Name="GruposEntidade">
+    <Key>
+      <PropertyRef Name="IdGrupoEntidad" />
+    </Key>
+    <Property Name="IdGrupoEntidad" Type="Decimal" Precision="10" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Comentario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="NoEliminable" Type="Boolean" />
+    <Property Name="FechaRegistro" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Entidades" Relationship="Self.FK__Entidades__IdGru__628FA481" FromRole="GruposEntidades" ToRole="Entidades" />
+    <NavigationProperty Name="tblStatu" Relationship="Self.FK__GruposEnt__Statu__52593CB8" FromRole="GruposEntidades" ToRole="tblStatus" />
+    <NavigationProperty Name="TiposEntidades" Relationship="Self.FK__TiposEnti__IdGru__59063A47" FromRole="GruposEntidades" ToRole="TiposEntidades" />
+  </EntityType>
+  <EntityType Name="tblRolUserEntidad">
+    <Key>
+      <PropertyRef Name="IdRolUserEntidad" />
+    </Key>
+    <Property Name="IdRolUserEntidad" Type="Int32" Nullable="false" />
+    <Property Name="RolUserEntidad" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Entidades" Relationship="Self.FK__Entidades__RolUs__66603565" FromRole="tblRolUserEntidad" ToRole="Entidades" />
+  </EntityType>
+  <EntityType Name="tblStatu">
+    <Key>
+      <PropertyRef Name="IdStatus" />
+    </Key>
+    <Property Name="IdStatus" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Entidades" Relationship="Self.FK__Entidades__Statu__68487DD7" FromRole="tblStatus" ToRole="Entidades" />
+    <NavigationProperty Name="GruposEntidades" Relationship="Self.FK__GruposEnt__Statu__52593CB8" FromRole="tblStatus" ToRole="GruposEntidades" />
+    <NavigationProperty Name="TiposEntidades" Relationship="Self.FK__TiposEnti__Statu__5AEE82B9" FromRole="tblStatus" ToRole="TiposEntidades" />
+  </EntityType>
+  <EntityType Name="tblTipoDocumento">
+    <Key>
+      <PropertyRef Name="IdTipoDocumento" />
+    </Key>
+    <Property Name="IdTipoDocumento" Type="Int32" Nullable="false" />
+    <Property Name="TipoDocumento" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Entidades" Relationship="Self.FK__Entidades__TipoD__619B8048" FromRole="tblTipoDocumento" ToRole="Entidades" />
+  </EntityType>
+  <EntityType Name="tblTipoEntidad">
+    <Key>
+      <PropertyRef Name="IdTipoEntidad" />
+    </Key>
+    <Property Name="IdTipoEntidad" Type="Int32" Nullable="false" />
+    <Property Name="TipoEntidad" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Entidades" Relationship="Self.FK__Entidades__TipoE__5FB337D6" FromRole="tblTipoEntidad" ToRole="Entidades" />
+  </EntityType>
+  <EntityType Name="TiposEntidade">
+    <Key>
+      <PropertyRef Name="IdTipoEntidad" />
+    </Key>
+    <Property Name="IdTipoEntidad" Type="Decimal" Precision="10" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdGrupoEntidad" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="Comentario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="NoEliminable" Type="Boolean" />
+    <Property Name="FechaRegistro" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Entidades" Relationship="Self.FK__Entidades__IdTip__6383C8BA" FromRole="TiposEntidades" ToRole="Entidades" />
+    <NavigationProperty Name="GruposEntidade" Relationship="Self.FK__TiposEnti__IdGru__59063A47" FromRole="TiposEntidades" ToRole="GruposEntidades" />
+    <NavigationProperty Name="tblStatu" Relationship="Self.FK__TiposEnti__Statu__5AEE82B9" FromRole="TiposEntidades" ToRole="tblStatus" />
+  </EntityType>
+  <Association Name="FK__Entidades__IdGru__628FA481">
+    <End Role="GruposEntidades" Type="Self.GruposEntidade" Multiplicity="0..1" />
+    <End Role="Entidades" Type="Self.Entidade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GruposEntidades">
+        <PropertyRef Name="IdGrupoEntidad" />
+      </Principal>
+      <Dependent Role="Entidades">
+        <PropertyRef Name="IdGrupoEntidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Entidades__IdTip__6383C8BA">
+    <End Role="TiposEntidades" Type="Self.TiposEntidade" Multiplicity="0..1" />
+    <End Role="Entidades" Type="Self.Entidade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TiposEntidades">
+        <PropertyRef Name="IdTipoEntidad" />
+      </Principal>
+      <Dependent Role="Entidades">
+        <PropertyRef Name="IdTipoEntidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Entidades__RolUs__66603565">
+    <End Role="tblRolUserEntidad" Type="Self.tblRolUserEntidad" Multiplicity="0..1" />
+    <End Role="Entidades" Type="Self.Entidade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblRolUserEntidad">
+        <PropertyRef Name="IdRolUserEntidad" />
+      </Principal>
+      <Dependent Role="Entidades">
+        <PropertyRef Name="RolUserEntidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Entidades__Statu__68487DD7">
+    <End Role="tblStatus" Type="Self.tblStatu" Multiplicity="0..1" />
+    <End Role="Entidades" Type="Self.Entidade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblStatus">
+        <PropertyRef Name="IdStatus" />
+      </Principal>
+      <Dependent Role="Entidades">
+        <PropertyRef Name="Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Entidades__TipoD__619B8048">
+    <End Role="tblTipoDocumento" Type="Self.tblTipoDocumento" Multiplicity="1" />
+    <End Role="Entidades" Type="Self.Entidade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblTipoDocumento">
+        <PropertyRef Name="IdTipoDocumento" />
+      </Principal>
+      <Dependent Role="Entidades">
+        <PropertyRef Name="TipoDocumento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Entidades__TipoE__5FB337D6">
+    <End Role="tblTipoEntidad" Type="Self.tblTipoEntidad" Multiplicity="1" />
+    <End Role="Entidades" Type="Self.Entidade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblTipoEntidad">
+        <PropertyRef Name="IdTipoEntidad" />
+      </Principal>
+      <Dependent Role="Entidades">
+        <PropertyRef Name="TipoEntidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__GruposEnt__Statu__52593CB8">
+    <End Role="tblStatus" Type="Self.tblStatu" Multiplicity="0..1" />
+    <End Role="GruposEntidades" Type="Self.GruposEntidade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblStatus">
+        <PropertyRef Name="IdStatus" />
+      </Principal>
+      <Dependent Role="GruposEntidades">
+        <PropertyRef Name="Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TiposEnti__IdGru__59063A47">
+    <End Role="GruposEntidades" Type="Self.GruposEntidade" Multiplicity="0..1" />
+    <End Role="TiposEntidades" Type="Self.TiposEntidade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GruposEntidades">
+        <PropertyRef Name="IdGrupoEntidad" />
+      </Principal>
+      <Dependent Role="TiposEntidades">
+        <PropertyRef Name="IdGrupoEntidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TiposEnti__Statu__5AEE82B9">
+    <End Role="tblStatus" Type="Self.tblStatu" Multiplicity="0..1" />
+    <End Role="TiposEntidades" Type="Self.TiposEntidade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblStatus">
+        <PropertyRef Name="IdStatus" />
+      </Principal>
+      <Dependent Role="TiposEntidades">
+        <PropertyRef Name="Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SellPointEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Entidades" EntityType="Self.Entidade" />
+    <EntitySet Name="GruposEntidades" EntityType="Self.GruposEntidade" />
+    <EntitySet Name="tblRolUserEntidads" EntityType="Self.tblRolUserEntidad" />
+    <EntitySet Name="tblStatus" EntityType="Self.tblStatu" />
+    <EntitySet Name="tblTipoDocumentoes" EntityType="Self.tblTipoDocumento" />
+    <EntitySet Name="tblTipoEntidads" EntityType="Self.tblTipoEntidad" />
+    <EntitySet Name="TiposEntidades" EntityType="Self.TiposEntidade" />
+    <AssociationSet Name="FK__Entidades__IdGru__628FA481" Association="Self.FK__Entidades__IdGru__628FA481">
+      <End Role="GruposEntidades" EntitySet="GruposEntidades" />
+      <End Role="Entidades" EntitySet="Entidades" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Entidades__IdTip__6383C8BA" Association="Self.FK__Entidades__IdTip__6383C8BA">
+      <End Role="TiposEntidades" EntitySet="TiposEntidades" />
+      <End Role="Entidades" EntitySet="Entidades" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Entidades__RolUs__66603565" Association="Self.FK__Entidades__RolUs__66603565">
+      <End Role="tblRolUserEntidad" EntitySet="tblRolUserEntidads" />
+      <End Role="Entidades" EntitySet="Entidades" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Entidades__Statu__68487DD7" Association="Self.FK__Entidades__Statu__68487DD7">
+      <End Role="tblStatus" EntitySet="tblStatus" />
+      <End Role="Entidades" EntitySet="Entidades" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Entidades__TipoD__619B8048" Association="Self.FK__Entidades__TipoD__619B8048">
+      <End Role="tblTipoDocumento" EntitySet="tblTipoDocumentoes" />
+      <End Role="Entidades" EntitySet="Entidades" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Entidades__TipoE__5FB337D6" Association="Self.FK__Entidades__TipoE__5FB337D6">
+      <End Role="tblTipoEntidad" EntitySet="tblTipoEntidads" />
+      <End Role="Entidades" EntitySet="Entidades" />
+    </AssociationSet>
+    <AssociationSet Name="FK__GruposEnt__Statu__52593CB8" Association="Self.FK__GruposEnt__Statu__52593CB8">
+      <End Role="tblStatus" EntitySet="tblStatus" />
+      <End Role="GruposEntidades" EntitySet="GruposEntidades" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TiposEnti__IdGru__59063A47" Association="Self.FK__TiposEnti__IdGru__59063A47">
+      <End Role="GruposEntidades" EntitySet="GruposEntidades" />
+      <End Role="TiposEntidades" EntitySet="TiposEntidades" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TiposEnti__Statu__5AEE82B9" Association="Self.FK__TiposEnti__Statu__5AEE82B9">
+      <End Role="tblStatus" EntitySet="tblStatus" />
+      <End Role="TiposEntidades" EntitySet="TiposEntidades" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

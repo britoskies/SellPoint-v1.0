@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c691198edcd541bf858596997ac2e4c3" Name="Diagram1">
+        <EntityTypeShape EntityType="SellPointModel.Entidade" Width="1.5" PointX="7.5" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellPointModel.GruposEntidade" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellPointModel.tblRolUserEntidad" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellPointModel.tblStatu" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellPointModel.tblTipoDocumento" Width="1.5" PointX="5.25" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellPointModel.tblTipoEntidad" Width="1.5" PointX="5.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellPointModel.TiposEntidade" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="SellPointModel.FK__Entidades__IdGru__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="SellPointModel.FK__Entidades__IdTip__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="SellPointModel.FK__Entidades__RolUs__66603565" ManuallyRouted="false" />
+        <AssociationConnector Association="SellPointModel.FK__Entidades__Statu__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="SellPointModel.FK__Entidades__TipoD__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="SellPointModel.FK__Entidades__TipoE__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="SellPointModel.FK__GruposEnt__Statu__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="SellPointModel.FK__TiposEnti__IdGru__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="SellPointModel.FK__TiposEnti__Statu__5AEE82B9" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
